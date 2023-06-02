@@ -1,0 +1,94 @@
+---
+layout: default
+---
+
+<!-- Start Banner============================================= -->
+    {% include carousel.html %}
+<!-- End Banner -->
+   
+<!-- Start About 
+    ============================================= -->
+    <div class="about-us-area overflow-hidden default-padding">
+        <div class="container">
+            <div class="about-items">
+                <!-- Shape -->
+                <div class="shape">
+                    <img src="assets/img/shape/8.png" alt="Shape">
+                </div>
+                <!-- End Shape -->
+                <div class="row align-center">
+                    <div class="col-lg-6">
+                        <div class="thumb">
+                            {% for image in site.data.about.images %}
+                            <img src="{{ image }}" alt="Thumb">
+                            {% endfor %}
+                            <div class="experience">
+                                <h2>{{ site.data.about.yearsExperience }}</h2>
+                                <h4>Years Experiences</h4>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 info">
+                        <h2>{{ site.data.about.title }}</h2>
+                        <blockquote>
+                            {{ site.data.about.quote }}
+                        </blockquote>
+                        {% for paragraph in site.data.about.paragraphs %}
+                        <p>{{ paragraph }}</p>
+                        {% endfor %}
+                        <div class="bottom-info">
+                            <div class="button">
+                                <a data-animation="animated zoomInUp" class="btn btn-theme primary effect btn-md" href="#">{{ site.data.about.buttonText }}</a>
+                            </div>
+                            <div class="contact">
+                                <div class="content">
+                                    <span>{{ site.data.about.contactInfo.description }}</span>
+                                    <h5>{{ site.data.about.contactInfo.phoneNumber }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- End About Area -->
+<!-- Start Features Area 
+    ============================================= -->
+    <div class="features-area default-padding bottom-less">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h4>{{ site.data.services.title }}</h4>
+                        <h2>{{ site.data.services.subtitle }}</h2>
+                        <div class="devider"></div>
+                        <p>{{ site.data.services.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="features-items">
+                <div class="row">
+                    {% for service in site.data.services %}
+                    <!-- Single Item -->
+                    <div class="feature-style-three col-lg-4 col-md-6">
+                        <div class="item">
+                            <div class="top">
+                                <i class="{{ service.icon }}"></i>
+                                <h4><a href="#">{{ service.title }}</a></h4>
+                            </div>
+                            <p>{{ service.description }}</p>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- End Features Area -->
+  
